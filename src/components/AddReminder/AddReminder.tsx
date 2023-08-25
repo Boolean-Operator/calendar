@@ -1,30 +1,31 @@
-import React from "react";
-import CloseIcon from "@material-ui/icons/Close";
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
+import React from 'react';
+import CloseIcon from '@material-ui/icons/Close';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
 import {
   WithStyles,
   withStyles,
   createStyles,
   Theme,
-} from "@material-ui/core/styles";
+} from '@material-ui/core/styles';
+import NewReminderForm from './NewReminderForm';
 
 const styles = (theme: Theme) =>
   createStyles({
     addReminderFormContainer: {
-      minHeight: "250px",
-      marginTop: "10px",
-      display: "flex",
-      flexDirection: "column",
+      minHeight: '250px',
+      marginTop: '10px',
+      display: 'flex',
+      flexDirection: 'column',
     },
     closeButton: {
-      position: "absolute",
-      right: "10px",
-      top: "10px",
+      position: 'absolute',
+      right: '10px',
+      top: '10px',
     },
   });
 
@@ -56,9 +57,9 @@ const AddReminder = (props: Props) => {
       </DialogTitle>
       <Divider light />
       <DialogContent className={classes.addReminderFormContainer}>
-        <Typography>
-          Use this space to create the UI to add a reminder to the calendar.
-        </Typography>
+        {/* <Typography> */}
+        <NewReminderForm onCloseHandler={onClose} />
+        {/* </Typography> */}
       </DialogContent>
     </Dialog>
   );
